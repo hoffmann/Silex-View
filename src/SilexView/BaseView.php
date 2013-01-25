@@ -6,7 +6,6 @@ class BaseView
 {
     protected $http_method_names = array('get', 'post', 'put', 'delete', 'head', 'options', 'trace');
     public $app;
-    public $request;
 
     public static function asView()
     {
