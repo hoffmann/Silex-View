@@ -1,0 +1,31 @@
+{
+    "name": "hoffmann/silex-view",
+    "description": "Generic Views for Silex",
+    "keywords": ["silex" ],
+    "homepage": "https://github.com/hoffmann/Silex-View",
+    "type": "library",
+    "license": "MIT",
+    "version": "dev",
+    "authors": [
+        {
+            "name": "Peter Hoffmann",
+            "email": "ph@peter-hoffmann.com",
+            "homepage": "http://peter-hoffmann.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "require-dev": {
+        "silex/silex": "*",
+        "twig/twig": ">=1.2.0"
+    },
+    "suggest": {
+        "twig/twig": ">=1.2.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "SilexView": "src"
+        }
+    },
+    "minimum-stability": "dev"
