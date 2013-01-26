@@ -19,10 +19,10 @@ class TemplateView extends BaseView
 
     function get($request, $app)
     {
-        return $app["twig"]->render($this->getTemplateName(), $this->getContextData($request));
+        return $app["twig"]->render($this->getTemplateName(), $this->getContextData($request, $app));
     }
 
-    function getContextData($request)
+    function getContextData($request, $app)
     {
     }
 }
