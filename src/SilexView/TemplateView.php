@@ -6,7 +6,6 @@ namespace SilexView;
 
 class TemplateView extends BaseView
 {
-    protected $template_name = Null;
 
     /*
      * Get the Template Name for the view
@@ -18,9 +17,9 @@ class TemplateView extends BaseView
 
     }
 
-    function get($request)
+    function get($request, $app)
     {
-        return $this->app["twig"]->render($this->getTemplateName(), $this->getContextData($request));
+        return $app["twig"]->render($this->getTemplateName(), $this->getContextData($request));
     }
 
     function getContextData($request)

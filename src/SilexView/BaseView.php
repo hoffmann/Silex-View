@@ -5,7 +5,7 @@ namespace SilexView;
 class BaseView
 {
     protected $http_method_names = array('get', 'post', 'put', 'delete', 'head', 'options', 'trace');
-    public $app;
+
 
     public static function asView()
     {
@@ -14,8 +14,7 @@ class BaseView
         return function(\Symfony\Component\HttpFoundation\Request $request, \Silex\Application $app) use ($classname, $args){
             $cls = new \ReflectionClass($classname);
             $instance = $cls->newInstanceArgs($args);
-            $instance->app = $app;
-            return $instance->dispatch($request);
+            return $instance->dispatch($request, $app);
         };
     }
 
@@ -27,7 +26,7 @@ class BaseView
             $method = "get";
         if (! in_array($method, $this->http_method_names) || ! method_exists($this, $method))
             return $this->httpMethodNotAllowed($method);
-        return $this->$method($request);
+        return $this->$method($request, $app);
     }
 
     public function httpMethodNotAllowed($method)
