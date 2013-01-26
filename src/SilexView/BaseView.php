@@ -18,7 +18,7 @@ class BaseView
         };
     }
 
-    public function dispatch($request)
+    public function dispatch($request, $app)
     {
         $method = strtolower($request->getMethod());
         //if no head method is defined use get
