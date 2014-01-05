@@ -24,5 +24,6 @@ class TemplateView extends BaseView
 
     function getContextData($request, $app)
     {
+        return array();
     }
 }
